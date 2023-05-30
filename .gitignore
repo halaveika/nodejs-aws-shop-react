@@ -24,3 +24,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# nested
+
+cdk/*.js
+cdk/!jest.config.js
+cdk/*.d.ts
+cdk/node_modules
+cdk/*.lock
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
