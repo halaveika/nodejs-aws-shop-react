@@ -36,3 +36,10 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `deploy (cdk and tsc install global)`
+
+deploy distributed from dist to :
+
+* [backetUrl](http://halaveika-nodejs-aws-shop-react.s3-website-us-east-1.amazonaws.com/)
+* [CloudfrontUrl](https://d2dynymy8vu0et.cloudfront.net/)

@@ -12,6 +12,9 @@ export default defineConfig({
       "~": path.resolve(__dirname, "src"),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 100000, // Set the chunk size limit to 1 MiB
+  },
   plugins: [react()],
   test: {
     globals: true,
