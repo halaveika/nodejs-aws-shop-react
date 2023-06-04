@@ -15,7 +15,7 @@
     "nested:install":"npm install  --prefix ./cdk/",
     "nested:build":"npm run build  --prefix cdk",
     "nested:deploy":"npm run deploy  --prefix cdk",
-    "deploy": "npm run build && npm run nested:build && npm run nested:deploy"
+    "deploy": "npm run build && npm run nested:install && npm run nested:build && npm run nested:deploy"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.341.0",
