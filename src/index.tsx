@@ -7,6 +7,26 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { theme } from "~/theme";
+import axios from "axios";
+
+function setupAxiosInterceptors() {
+  axios.interceptors.response.use(
+    (response) => {
+      if ([401, 403].includes(response.status)) {
+        alert(`${response.status}: Unauthorized access`);
+      }
+      return response;
+    },
+    (error) => {
+      if (error.response && [401, 403].includes(error.response.status)) {
+        alert(`${error.response.status}: Unauthorized access`);
+      }
+      return Promise.reject(error);
+    }
+  );
+}
+
+setupAxiosInterceptors();
 
 const queryClient = new QueryClient({
   defaultOptions: {
